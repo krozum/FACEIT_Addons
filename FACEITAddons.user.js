@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name         FACEIT Addons
+// @version      0.4
 // @author       brains
-// @version      0.3
-// @author       You
 // @downloadURL  https://github.com/krozum/FACEIT_Addons/raw/main/FACEITAddons.user.js
 // @updateURL    https://github.com/krozum/FACEIT_Addons/raw/main/FACEITAddons.user.js
 // @match        https://www.faceit.com/*
@@ -44,8 +43,10 @@
                                 let faction1 = element2.payload.teams.faction1.roster;
                                 $(faction1).each(function(index, element3) {
                                     if (array.indexOf(element3.nickname) >= 0) {
-                                        object[element3.nickname] = matchId;
-                                        $('a[tooltip-class="fi-popover fi-popover--user-stats"][href="/pl/players-modal/' + element3.nickname + '"]').parent().append('<a class="toRemoveAddons" target="_blank" href="https://www.faceit.com/pl/csgo/room/' + matchId + '/scoreboard"><img style="max-width: 20px;opacity: 0.7;" src="https://raw.githubusercontent.com/krozum/FACEIT_Addons/main/calendar-date-computer-icons-time-calendar-icon-63d07b9db37348fbba3c9b763357accf.png"></a>');
+                                        if (element3.nickname !== currentUser) {
+                                            object[element3.nickname] = matchId;
+                                            $('a[tooltip-class="fi-popover fi-popover--user-stats"][href="/pl/players-modal/' + element3.nickname + '"]').parent().append('<a class="toRemoveAddons" target="_blank" href="https://www.faceit.com/pl/csgo/room/' + matchId + '/scoreboard"><img style="max-width: 20px;opacity: 0.7;" src="https://raw.githubusercontent.com/krozum/FACEIT_Addons/main/calendar-date-computer-icons-time-calendar-icon-63d07b9db37348fbba3c9b763357accf.png"></a>');
+                                        }
                                     }
                                 })
 
@@ -54,8 +55,10 @@
                                 $(faction2).each(function(index, element3) {
                                     console.log(element3.nickname)
                                     if (array.indexOf(element3.nickname) >= 0) {
-                                        object[element3.nickname] = matchId;
-                                        $('a[tooltip-class="fi-popover fi-popover--user-stats"][href="/pl/players-modal/' + element3.nickname + '"]').parent().append('<a class="toRemoveAddons" target="_blank" href="https://www.faceit.com/pl/csgo/room/' + matchId + '/scoreboard"><img style="max-width: 20px;opacity: 0.7;" src="https://raw.githubusercontent.com/krozum/FACEIT_Addons/main/calendar-date-computer-icons-time-calendar-icon-63d07b9db37348fbba3c9b763357accf.png"></a>');
+                                        if (element3.nickname !== currentUser) {
+                                            object[element3.nickname] = matchId;
+                                            $('a[tooltip-class="fi-popover fi-popover--user-stats"][href="/pl/players-modal/' + element3.nickname + '"]').parent().append('<a class="toRemoveAddons" target="_blank" href="https://www.faceit.com/pl/csgo/room/' + matchId + '/scoreboard"><img style="max-width: 20px;opacity: 0.7;" src="https://raw.githubusercontent.com/krozum/FACEIT_Addons/main/calendar-date-computer-icons-time-calendar-icon-63d07b9db37348fbba3c9b763357accf.png"></a>');
+                                        }
                                     }
                                 })
                             })
