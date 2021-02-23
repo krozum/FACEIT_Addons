@@ -3,6 +3,8 @@
 // @author       brains
 // @version      0.1
 // @author       You
+// @downloadURL  https://github.com/krozum/FACEIT_Addons/raw/master/FACEITAddons.user.js
+// @updateURL    https://github.com/krozum/FACEIT_Addons/raw/master/FACEITAddons.user.js
 // @match        https://www.faceit.com/*
 // @grant        none
 // ==/UserScript==
